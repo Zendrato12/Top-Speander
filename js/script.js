@@ -36,7 +36,7 @@
  *  4. Execute as: Me | Who has access: Anyone
  *  5. Deploy → Salin URL → Tempel di sini
  */
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbxXxmCABImMCBusq5k_dL2FZJ9fQlL5fA-UO7g8TGP_hXA0-hP3akEFdK9iE8P-JxylzA/exec";
+/*const SHEET_URL = "https://script.google.com/macros/s/AKfycbxXxmCABImMCBusq5k_dL2FZJ9fQlL5fA-UO7g8TGP_hXA0-hP3akEFdK9iE8P-JxylzA/exec";*/
 
 /**
  * Interval auto-refresh dalam milidetik
