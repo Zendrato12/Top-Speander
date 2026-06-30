@@ -36,7 +36,7 @@
  *  4. Execute as: Me | Who has access: Anyone
  *  5. Deploy → Salin URL → Tempel di sini
  */
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbyvU-s_iekuUeuAiTqfxKPnX85EMSqCm_ut1pqNX9c1LlyCMNz6E53dK43Z8WM1O6liNw/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbxtUm-Ol81bjuhOXbs-y3GyqBuIMKoBOYUbiRPeeEPnjtvVBrRxkPgRR7DB3TMo1S5Xyw/exec";
 
 /**
  * Interval auto-refresh dalam milidetik
@@ -54,7 +54,7 @@ const EVENT_NAME = "AVIAN 7.7 TOP SPENDER CHALLENGE";
    Hapus atau kosongi array ini saat sudah ada URL asli
    ================================================================ */
 const DEMO_DATA = [
-  { ranking: 1, nama: "Bapak Santoso", noHp: "08123456789", totalPembelian: 45750000, lastUpdate: "2026-07-10 08:30" },
+  /*{ ranking: 1, nama: "Bapak Santoso", noHp: "08123456789", totalPembelian: 45750000, lastUpdate: "2026-07-10 08:30" },
   { ranking: 2, nama: "Ibu Sari Dewi", noHp: "08987654321", totalPembelian: 38200000, lastUpdate: "2026-07-10 08:30" },
   { ranking: 3, nama: "Bapak Hendra", noHp: "08567890123", totalPembelian: 32500000, lastUpdate: "2026-07-10 08:30" },
   { ranking: 4, nama: "Toko Maju Jaya", noHp: "08345678901", totalPembelian: 28900000, lastUpdate: "2026-07-10 08:30" },
@@ -65,7 +65,7 @@ const DEMO_DATA = [
   { ranking: 9, nama: "Ibu Wulandari", noHp: "08890123456", totalPembelian: 11200000, lastUpdate: "2026-07-10 08:30" },
   { ranking: 10, nama: "Toko Sumber Rezeki", noHp: "08901234567", totalPembelian: 9850000, lastUpdate: "2026-07-10 08:30" },
   { ranking: 11, nama: "Bapak Dedi", noHp: "08012345678", totalPembelian: 7600000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 12, nama: "Ibu Fitri Handayani", noHp: "08123098765", totalPembelian: 5400000, lastUpdate: "2026-07-10 08:30" },
+  { ranking: 12, nama: "Ibu Fitri Handayani", noHp: "08123098765", totalPembelian: 5400000, lastUpdate: "2026-07-10 08:30" },*/
 ];
 /* ================================================================
    STATE APLIKASI
@@ -112,7 +112,7 @@ async function fetchLeaderboardData() {
 
   try {
     // Cek apakah URL sudah dikonfigurasi
-    if (!SHEET_URL || SHEET_URL === "https://script.google.com/macros/s/AKfycbyvU-s_iekuUeuAiTqfxKPnX85EMSqCm_ut1pqNX9c1LlyCMNz6E53dK43Z8WM1O6liNw/exec" || SHEET_URL.trim() === "") {
+    if (!SHEET_URL || SHEET_URL === "https://script.google.com/macros/s/AKfycbxtUm-Ol81bjuhOXbs-y3GyqBuIMKoBOYUbiRPeeEPnjtvVBrRxkPgRR7DB3TMo1S5Xyw/exec" || SHEET_URL.trim() === "") {
       console.warn("⚠️ SHEET_URL belum dikonfigurasi. Menampilkan data demo.");
       isDemoMode = true;
       await simulateDelay(800); // Simulasi loading
