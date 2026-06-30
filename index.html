@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- ============================================================
+       AVIAN 7.7 TOP SPENDER CHALLENGE - Leaderboard Website
+       Dibuat oleh: Indo Super Grosir Cianjur x Avian Brands
+       Versi: 1.0 | Juni 2026
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Leaderboard AVIAN 7.7 Top Spender Challenge - Indo Super Grosir Cianjur" />
+  <meta name="theme-color" content="#C8102E" />
+
+  <title>AVIAN 7.7 TOP SPENDER CHALLENGE | Indo Super Grosir</title>
+
+  <!-- ===== Favicon ===== -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ===== Font Awesome Icons ===== -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+
+  <!-- ===== Main Stylesheet ===== -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       LOADING OVERLAY - Ditampilkan saat mengambil data
+       ============================================================ -->
+  <div id="loading-overlay" class="loading-overlay" role="status" aria-live="polite">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <p class="loading-text">Memuat data leaderboard...</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HEADER - Logo & Judul Event
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <!-- Dekorasi bintang / partikel latar -->
+    <div class="header-bg-decoration" aria-hidden="true">
+      <span class="star s1">★</span>
+      <span class="star s2">★</span>
+      <span class="star s3">★</span>
+      <span class="star s4">✦</span>
+      <span class="star s5">✦</span>
+    </div>
+
+    <div class="container">
+      <!-- Baris Logo -->
+      <div class="header-logos" role="img" aria-label="Logo Avian dan Indo Super Grosir">
+        <!-- Logo Avian -->
+        <div class="logo-box logo-avian">
+          <div class="logo-placeholder avian-logo-placeholder">
+            <span class="logo-letter">A</span>
+            <span class="logo-brand-name">AVIAN<br><small>BRANDS</small></span>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="logo-divider" aria-hidden="true">✕</div>
+
+        <!-- Logo Indo Super Grosir -->
+        <div class="logo-box logo-isg">
+          <div class="logo-placeholder isg-logo-placeholder">
+            <span class="logo-letter">ISG</span>
+            <span class="logo-brand-name">INDO SUPER<br><small>GROSIR</small></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Judul Event -->
+      <div class="header-title">
+        <div class="event-badge">
+          <i class="fas fa-trophy" aria-hidden="true"></i> EVENT SPESIAL 7.7
+        </div>
+        <h1 class="event-title">
+          AVIAN <span class="highlight-77">7.7</span> TOP SPENDER
+          <span class="title-challenge">CHALLENGE</span>
+        </h1>
+        <p class="event-period">
+          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+          Periode 1 Juli – 31 Juli 2026
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class="site-main" role="main">
+    <div class="container">
+
+      <!-- ===== INFORMASI PROGRAM ===== -->
+      <section class="program-info" aria-labelledby="program-info-heading">
+        <div class="info-card">
+          <div class="info-icon" aria-hidden="true">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <div class="info-text">
+            <h2 id="program-info-heading" class="info-title">Tentang Program</h2>
+            <p class="info-desc">
+              Program <strong>Top Spender</strong> memberikan apresiasi kepada pelanggan dengan 
+              total pembelian produk Avian terbesar selama periode promo. Terus tingkatkan 
+              pembelian Anda dan raih posisi puncak leaderboard!
+            </p>
+          </div>
+        </div>
+
+        <!-- Stats bar ringkasan -->
+        <div class="stats-bar" role="list">
+          <div class="stat-item" role="listitem">
+            <i class="fas fa-users" aria-hidden="true"></i>
+            <div>
+              <span class="stat-value" id="total-participants">–</span>
+              <span class="stat-label">Total Peserta</span>
+            </div>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" role="listitem">
+            <i class="fas fa-crown" aria-hidden="true"></i>
+            <div>
+              <span class="stat-value" id="top-amount">–</span>
+              <span class="stat-label">Pembelian Tertinggi</span>
+            </div>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" role="listitem">
+            <i class="fas fa-sync-alt" aria-hidden="true"></i>
+            <div>
+              <span class="stat-value" id="refresh-countdown">5:00</span>
+              <span class="stat-label">Refresh Otomatis</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PENCARIAN CUSTOMER ===== -->
+      <section class="search-section" aria-labelledby="search-heading">
+        <div class="search-card">
+          <h2 id="search-heading" class="search-title">
+            <i class="fas fa-search" aria-hidden="true"></i> Cari Posisi Anda
+          </h2>
+          <p class="search-subtitle">Cari berdasarkan Nama atau Nomor HP</p>
+
+          <div class="search-input-wrapper" role="search">
+            <label for="search-input" class="sr-only">Cari nama atau nomor HP customer</label>
+            <i class="fas fa-search search-icon" aria-hidden="true"></i>
+            <input
+              type="text"
+              id="search-input"
+              class="search-input"
+              placeholder="Ketik nama atau nomor HP..."
+              autocomplete="off"
+              aria-label="Cari nama atau nomor HP"
+              aria-describedby="search-hint"
+            />
+            <button class="search-clear-btn" id="search-clear" aria-label="Hapus pencarian" style="display:none;">
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <p id="search-hint" class="search-hint">
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+            Contoh: "Bapak Agus" atau "08123456789"
+          </p>
+
+          <!-- Hasil Pencarian -->
+          <div id="search-result" class="search-result" role="region" aria-live="polite" aria-label="Hasil pencarian" style="display:none;">
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== LEADERBOARD TABLE ===== -->
+      <section class="leaderboard-section" aria-labelledby="leaderboard-heading">
+
+        <!-- Header leaderboard + tombol refresh -->
+        <div class="leaderboard-header">
+          <h2 id="leaderboard-heading" class="leaderboard-title">
+            <i class="fas fa-trophy" aria-hidden="true"></i> Leaderboard
+          </h2>
+          <button
+            id="refresh-btn"
+            class="refresh-btn"
+            onclick="manualRefresh()"
+            aria-label="Refresh data sekarang"
+          >
+            <i class="fas fa-sync-alt" id="refresh-icon" aria-hidden="true"></i>
+            <span>Refresh Sekarang</span>
+          </button>
+        </div>
+
+        <!-- Error Banner (tersembunyi, muncul jika gagal fetch) -->
+        <div id="error-banner" class="error-banner" role="alert" style="display:none;">
+          <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+          <span id="error-message">Gagal mengambil data. Pastikan URL Google Sheets sudah benar.</span>
+          <button onclick="manualRefresh()" class="retry-btn">
+            <i class="fas fa-redo" aria-hidden="true"></i> Coba Lagi
+          </button>
+        </div>
+
+        <!-- Tabel Leaderboard -->
+        <div class="table-wrapper" role="region" aria-label="Tabel leaderboard top spender">
+          <table class="leaderboard-table" id="leaderboard-table">
+            <thead>
+              <tr>
+                <th scope="col" class="col-rank">Ranking</th>
+                <th scope="col" class="col-name">Nama Customer</th>
+                <th scope="col" class="col-amount">Total Pembelian</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+              <!-- Baris data diisi oleh JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="empty-state" style="display:none;">
+          <i class="fas fa-database" aria-hidden="true"></i>
+          <p>Belum ada data leaderboard</p>
+          <small>Pastikan Google Sheets sudah diisi dan URL sudah dikonfigurasi</small>
+        </div>
+
+        <!-- Last Update Info -->
+        <div class="last-update-bar" role="status" aria-live="polite">
+          <div class="last-update-info">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span>Terakhir diperbarui:</span>
+            <strong id="last-update-date">–</strong>
+            <strong id="last-update-time">–</strong>
+          </div>
+          <div class="data-source-info">
+            <i class="fas fa-table" aria-hidden="true"></i>
+            <span>Data dari Google Sheets</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== QR CODE SECTION ===== -->
+      <section class="qr-section" aria-labelledby="qr-heading">
+        <div class="qr-card">
+          <div class="qr-content">
+            <div class="qr-placeholder" role="img" aria-label="QR Code menuju website leaderboard">
+              <!-- QR Code placeholder - ganti dengan QR Code asli -->
+              <div class="qr-box">
+                <div class="qr-inner">
+                  <i class="fas fa-qrcode" aria-hidden="true"></i>
+                </div>
+                <p class="qr-label">Scan QR Code</p>
+              </div>
+            </div>
+            <div class="qr-info">
+              <h2 id="qr-heading" class="qr-title">Akses Leaderboard</h2>
+              <p class="qr-desc">
+                Scan QR code ini untuk membuka halaman leaderboard langsung dari smartphone Anda.
+                Pantau posisi Anda kapan saja dan di mana saja!
+              </p>
+              <div class="qr-steps">
+                <div class="qr-step">
+                  <span class="step-num">1</span>
+                  <span>Buka kamera HP</span>
+                </div>
+                <div class="qr-step">
+                  <span class="step-num">2</span>
+                  <span>Arahkan ke QR Code</span>
+                </div>
+                <div class="qr-step">
+                  <span class="step-num">3</span>
+                  <span>Tap notifikasi link</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end .container -->
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p class="footer-copyright">
+            &copy; 2026 <strong>Indo Super Grosir Cianjur</strong> &times; <strong>Avian Brands</strong>
+          </p>
+          <p class="footer-tagline">Bersama Membangun Rumah Impian Indonesia</p>
+        </div>
+        <div class="footer-events">
+          <p class="footer-events-label">Event Mendatang:</p>
+          <div class="footer-event-badges">
+            <span class="future-event-badge">🎨 Color Hunt 8.8</span>
+            <span class="future-event-badge">🍀 Lucky Dip Rejeki 9.9</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          Data bersifat real-time dan diperbarui secara otomatis setiap 5 menit.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Main JavaScript ===== -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
