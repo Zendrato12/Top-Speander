@@ -53,7 +53,7 @@ const EVENT_NAME = "AVIAN 7.7 TOP SPENDER CHALLENGE";
    DEMO DATA - Digunakan saat SHEET_URL belum dikonfigurasi
    Hapus atau kosongi array ini saat sudah ada URL asli
    ================================================================ */
-/*const DEMO_DATA = [
+const DEMO_DATA = [
   { ranking: 1, nama: "Bapak Santoso", noHp: "08123456789", totalPembelian: 45750000, lastUpdate: "2026-07-10 08:30" },
   { ranking: 2, nama: "Ibu Sari Dewi", noHp: "08987654321", totalPembelian: 38200000, lastUpdate: "2026-07-10 08:30" },
   { ranking: 3, nama: "Bapak Hendra", noHp: "08567890123", totalPembelian: 32500000, lastUpdate: "2026-07-10 08:30" },
@@ -67,7 +67,7 @@ const EVENT_NAME = "AVIAN 7.7 TOP SPENDER CHALLENGE";
   { ranking: 11, nama: "Bapak Dedi", noHp: "08012345678", totalPembelian: 7600000, lastUpdate: "2026-07-10 08:30" },
   { ranking: 12, nama: "Ibu Fitri Handayani", noHp: "08123098765", totalPembelian: 5400000, lastUpdate: "2026-07-10 08:30" },
 ];
-*/
+
 /* ================================================================
    STATE APLIKASI
    ================================================================ */
