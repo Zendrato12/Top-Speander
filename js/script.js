@@ -53,9 +53,6 @@ const EVENT_NAME = "AVIAN 7.7 TOP SPENDER CHALLENGE";
    DEMO DATA - Digunakan saat SHEET_URL belum dikonfigurasi
    Hapus atau kosongi array ini saat sudah ada URL asli
    ================================================================ */
-const DEMO_DATA = [
-
-];
 
 /* ================================================================
    STATE APLIKASI
