@@ -36,7 +36,7 @@
  *  4. Execute as: Me | Who has access: Anyone
  *  5. Deploy → Salin URL → Tempel di sini
  */
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/1j_TgOHhjhsTPzSPZArHCAsbKgprbZ5A6cGgew33ogg8/edit?usp=sharing;
+const SHEET_URL = "hhttps://docs.google.com/spreadsheets/d/1j_TgOHhjhsTPzSPZArHCAsbKgprbZ5A6cGgew33ogg8/edit?gid=0#gid=0;
 
 /**
  * Interval auto-refresh dalam milidetik
@@ -113,7 +113,7 @@ async function fetchLeaderboardData() {
 
   try {
     // Cek apakah URL sudah dikonfigurasi
-    if (!SHEET_URL || SHEET_URL === "PASTE_URL_DISINI" || SHEET_URL.trim() === "") {
+    if (!SHEET_URL || SHEET_URL === "https://docs.google.com/spreadsheets/d/1j_TgOHhjhsTPzSPZArHCAsbKgprbZ5A6cGgew33ogg8/edit?gid=0#gid=0" || SHEET_URL.trim() === "") {
       console.warn("⚠️ SHEET_URL belum dikonfigurasi. Menampilkan data demo.");
       isDemoMode = true;
       await simulateDelay(800); // Simulasi loading
