@@ -54,18 +54,7 @@ const EVENT_NAME = "AVIAN 7.7 TOP SPENDER CHALLENGE";
    Hapus atau kosongi array ini saat sudah ada URL asli
    ================================================================ */
 const DEMO_DATA = [
-  { ranking: 1, nama: "Bapak Santoso", noHp: "08123456789", totalPembelian: 45750000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 2, nama: "Ibu Sari Dewi", noHp: "08987654321", totalPembelian: 38200000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 3, nama: "Bapak Hendra", noHp: "08567890123", totalPembelian: 32500000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 4, nama: "Toko Maju Jaya", noHp: "08345678901", totalPembelian: 28900000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 5, nama: "Ibu Ratna", noHp: "08678901234", totalPembelian: 25100000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 6, nama: "Bapak Agus Setiawan", noHp: "08456789012", totalPembelian: 21750000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 7, nama: "CV. Karya Indah", noHp: "08234567890", totalPembelian: 18300000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 8, nama: "Bapak Agus", noHp: "08765432109", totalPembelian: 13800000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 9, nama: "Ibu Wulandari", noHp: "08890123456", totalPembelian: 11200000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 10, nama: "Toko Sumber Rezeki", noHp: "08901234567", totalPembelian: 9850000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 11, nama: "Bapak Dedi", noHp: "08012345678", totalPembelian: 7600000, lastUpdate: "2026-07-10 08:30" },
-  { ranking: 12, nama: "Ibu Fitri Handayani", noHp: "08123098765", totalPembelian: 5400000, lastUpdate: "2026-07-10 08:30" },
+
 ];
 
 /* ================================================================
