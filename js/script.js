@@ -36,7 +36,7 @@
  *  4. Execute as: Me | Who has access: Anyone
  *  5. Deploy → Salin URL → Tempel di sini
  */
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbxjzIuuZ2yqO-NTjTYtMcUAKY78ss_AzrQGN-suzFeBbCii3rh6LOg_3DA11qwpbT3RtQ/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbxzpOK6souXrh13yp_LQDqfoAHXmoHMFEuc77u-P6kcuF-T0Gg-i9MuMqhjhR6aYgto0g/exec";
 
 /**
  * Interval auto-refresh dalam milidetik
@@ -113,7 +113,7 @@ async function fetchLeaderboardData() {
   try {
     // Cek apakah URL sudah dikonfigurasi
     // Cek apakah URL benar-benar diisi
-   if (!SHEET_URL || SHEET_URL.trim() === "" || SHEET_URL.includes("https://script.google.com/macros/s/AKfycbxjzIuuZ2yqO-NTjTYtMcUAKY78ss_AzrQGN-suzFeBbCii3rh6LOg_3DA11qwpbT3RtQ/exec")) {
+   if (!SHEET_URL || SHEET_URL.trim() === "" || SHEET_URL.includes("https://script.google.com/macros/s/AKfycbxzpOK6souXrh13yp_LQDqfoAHXmoHMFEuc77u-P6kcuF-T0Gg-i9MuMqhjhR6aYgto0g/exec")) {
      console.warn("⚠️ SHEET_URL belum dikonfigurasi. Menampilkan data demo.");
      isDemoMode = true;
      await simulateDelay(800); // Simulasi loading
