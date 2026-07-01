@@ -112,12 +112,13 @@ async function fetchLeaderboardData() {
 
   try {
     // Cek apakah URL sudah dikonfigurasi
-    if (!SHEET_URL || SHEET_URL === "https://script.google.com/macros/s/AKfycbxjzIuuZ2yqO-NTjTYtMcUAKY78ss_AzrQGN-suzFeBbCii3rh6LOg_3DA11qwpbT3RtQ/exec" || SHEET_URL.trim() === "") {
-      console.warn("⚠️ SHEET_URL belum dikonfigurasi. Menampilkan data demo.");
-      isDemoMode = true;
-      await simulateDelay(800); // Simulasi loading
-      processData(DEMO_DATA, "Demo Mode");
-    } else {
+    // Cek apakah URL benar-benar diisi
+   if (!SHEET_URL || SHEET_URL.trim() === "" || SHEET_URL.includes("https://script.google.com/macros/s/AKfycbxjzIuuZ2yqO-NTjTYtMcUAKY78ss_AzrQGN-suzFeBbCii3rh6LOg_3DA11qwpbT3RtQ/exec")) {
+     console.warn("⚠️ SHEET_URL belum dikonfigurasi. Menampilkan data demo.");
+     isDemoMode = true;
+     await simulateDelay(800); // Simulasi loading
+     processData(DEMO_DATA, "Demo Mode");
+   } else { 
       isDemoMode = false;
       // Fetch dari Google Apps Script
       const response = await fetch(SHEET_URL, {
