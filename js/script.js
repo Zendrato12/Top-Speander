@@ -111,50 +111,45 @@ async function fetchLeaderboardData() {
   hideError();
 
   try {
-    // Cek apakah URL sudah dikonfigurasi
-    // Cek apakah URL benar-benar diisi
-   if (!SHEET_URL || SHEET_URL.trim() === "" || SHEET_URL.includes("https://script.google.com/macros/s/AKfycbxzpOK6souXrh13yp_LQDqfoAHXmoHMFEuc77u-P6kcuF-T0Gg-i9MuMqhjhR6aYgto0g/exec")) {
-     console.warn("⚠️ SHEET_URL belum dikonfigurasi. Menampilkan data demo.");
-     isDemoMode = true;
-     await simulateDelay(800); // Simulasi loading
-     processData(DEMO_DATA, "Demo Mode");
-   } else { 
-      isDemoMode = false;
-      // Fetch dari Google Apps Script
-      const response = await fetch(SHEET_URL, {
-        method: "GET",
-        cache: "no-cache",
-      });
+    isDemoMode = false;
+    
+    // Langsung ambil data dari URL Apps Script terbarumu
+    const response = await fetch(SHEET_URL, {
+      method: "GET",
+      cache: "no-cache",
+    });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const json = await response.json();
-
-      // Validasi struktur response
-      if (!json || !Array.isArray(json.data)) {
-        throw new Error("Format data tidak valid. Pastikan Apps Script mengembalikan { data: [] }");
-      }
-
-      processData(json.data, json.lastUpdate || null);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
+
+    const json = await response.json();
+
+    // Validasi struktur response dari Google Sheets
+    if (!json || !Array.isArray(json.data)) {
+      throw new Error("Format data tidak valid. Pastikan Apps Script mengembalikan { data: [] }");
+    }
+
+    // Jika data dari Google Sheet berhasil dibaca tetapi isinya kosong
+    if (json.data.length === 0) {
+      console.warn("⚠️ Google Sheets terhubung, tetapi belum ada data nama customer di dalamnya.");
+    }
+
+    processData(json.data, json.lastUpdate || null);
+
   } catch (error) {
     console.error("❌ Gagal mengambil data:", error);
     showError(`Gagal mengambil data: ${error.message}`);
-
-    // Jika ada data lama, tetap tampilkan
+    
+    // Terpaksa tampilkan data kosong jika error
     if (leaderboardData.length === 0) {
-      // Tampilkan demo jika belum ada data sama sekali
-      isDemoMode = true;
-      processData(DEMO_DATA, "Demo Mode (offline)");
+      processData([], "Error Mode");
     }
   } finally {
     isLoading = false;
     hideLoadingOverlay();
   }
 }
-
 /**
  * processData
  * Memproses, mengurutkan, dan menampilkan data ke leaderboard
