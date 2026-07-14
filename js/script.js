@@ -234,9 +234,11 @@ function renderLeaderboard(data, changedRankings = new Set()) {
   if (tbody) tbody.classList.add("table-refreshing");
 
   // Buat semua baris HTML
-  const rowsHTML = data
-    .map((row, index) => buildTableRow(row, index, changedRankings))
-    .join("");
+   const top5 = data.slice(0, 5);
+   
+   const rowsHTML = top5
+     .map((row, index) => buildTableRow(row, index, changedRankings))
+     .join("");
 
   // Inject ke DOM
   if (tbody) {
