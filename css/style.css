@@ -185,7 +185,7 @@ body {
 .site-header {
   background-image:
     linear-gradient(135deg, rgba(0,29,92,0.92) 0%, rgba(0,48,135,0.88) 45%, rgba(200,16,46,0.90) 100%),
-    url('assets/top_hadiah.png');
+    url('assets/top hadiah.png');
   background-size: cover, cover;
   background-position: center, center 30%;
   background-repeat: no-repeat, no-repeat;
